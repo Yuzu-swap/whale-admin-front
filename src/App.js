@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from "react";
+import { Admin, Resource, ListGuesser } from 'react-admin';
+import { Layout } from "./components/layout";
+import jsonServerProvider from 'ra-data-json-server';
+import { Dashboard } from "./components/dashboard";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+console.log(dataProvider);
+const App = () => (
+      <Admin 
+      dataProvider={dataProvider}
+      dashboard={Dashboard}
+      layout={Layout}>
+          <Resource name="users" list={ListGuesser} />
+      </Admin>
   );
-}
 
 export default App;

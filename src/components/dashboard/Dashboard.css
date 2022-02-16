@@ -1,0 +1,11 @@
+.dashboard-top{
+    width: 100%;
+    display: flex;
+}
+.dashboard-top-item{
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+    border-radius: 1px;
+}
