@@ -20,10 +20,11 @@ const AccoutList = (props: ListProps): ReactElement => {
     return (
         <List
             {...props}
-            perPage={25}
+            perPage={5}
         >
             <Datagrid>
-                <TextField source="address"/>
+                <TextField label="钱包地址" source="address"/>
+                <NumberField source="totalValue" options={{ style: 'currency', currency: 'USD' }} />
             </Datagrid>
         </List>
     );
