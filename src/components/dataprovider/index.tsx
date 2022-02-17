@@ -36,7 +36,7 @@ import { fetchUtils, DataProvider } from 'ra-core';
 export default (
     apiUrl: string,
     httpClient = fetchUtils.fetchJson,
-    countHeader: string = 'Content-Range'
+    countHeader: string = 'Range'
 ): DataProvider => ({
     getList: (resource, params) => {
         const { page, perPage } = params.pagination;
@@ -62,11 +62,11 @@ export default (
                 : {};
 
         return httpClient(url, options).then(({ headers, json }) => {
-            if (!headers.has(countHeader)) {
+            /*if (!headers.has(countHeader)) {
                 throw new Error(
                     `The ${countHeader} header is missing in the HTTP Response. The simple REST data provider expects responses for lists of resources to contain this header with the total number of results to build the pagination. If you are using CORS, did you declare ${countHeader} in the Access-Control-Expose-Headers header?`
                 );
-            }
+            }*/
             return {
                 data: json,
                 total:
