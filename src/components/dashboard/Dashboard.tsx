@@ -1,5 +1,8 @@
 import { Resource, ListGuesser } from 'react-admin';
 import './Dashboard.css'
+import AccoutList from 'components/lists/accountsList';
+import StakeEventsList from 'components/lists/stakeEventsList';
+import StakePoolsList from 'components/lists/stakePoolsList';
 
 
 const Dashboard = ()=>{
@@ -11,7 +14,8 @@ const Dashboard = ()=>{
             <div className="dashboard-top-item">hello world</div>
             <div className="dashboard-top-item">hello world</div>
         </div>
-        <Resource name="users" list={ListGuesser} />
+        <Resource name="accounts?by=whale" list={AccoutList} />
+        <Resource name="stakepools" list={StakePoolsList} />
         </>
     )
 }

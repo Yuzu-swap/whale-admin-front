@@ -17,18 +17,19 @@ import { makeStyles } from '@material-ui/core/styles';
 import { ReactElement } from 'react';
 import AddressToDetailField from 'components/fields';
 
-const AccoutList = (props: ListProps): ReactElement => {
+const StakePoolsList = (props: ListProps): ReactElement => {
     return (
         <List
             {...props}
             perPage={10}
         >
             <Datagrid>
-                <AddressToDetailField label="钱包地址" source="id"/>
-                <NumberField source="totalValue" options={{ style: 'currency', currency: 'USD' }} />
+                <TextField label="id" source="id"/>
+                <TextField label="池子名称" source="name"/>
+                <TextField label="合约地址" source="lpAddress"/>
             </Datagrid>
         </List>
     );
 };
 
-export default AccoutList;
+export default StakePoolsList;

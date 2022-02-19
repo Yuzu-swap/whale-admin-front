@@ -39,7 +39,9 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "CI= GENERATE_SOURCEMAP=false react-scripts build",
+    "build-testnet": "yarn && react-scripts build",
+    "deploy-testnet": "ssh root@119.28.186.224 mkdir -p /data/whale-admin-test && scp  -r ./build/* root@119.28.186.224:/data/whale-admin-test/",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
