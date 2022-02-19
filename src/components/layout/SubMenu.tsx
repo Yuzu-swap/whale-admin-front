@@ -45,7 +45,6 @@ const SubMenu = (props: Props) => {
     const sidebarIsOpen = useSelector<ReduxState, boolean>(
         state => state.admin.ui.sidebarOpen
     );
-
     const header = (
         <MenuItem dense={dense} button onClick={handleToggle}>
             <ListItemIcon className={classes.icon}>

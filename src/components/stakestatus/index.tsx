@@ -1,7 +1,5 @@
+import EventIcon from '@material-ui/icons/Event';
 import * as React from 'react';
-import { Fragment } from 'react';
-import AccountIcon from '@material-ui/icons/People';
-
 import {
     BooleanField,
     Datagrid,
@@ -10,8 +8,8 @@ import {
     List,
     ListProps,
     NullableBooleanInput,
-    SearchInput,
     NumberField,
+    SearchInput,
     TextField
 } from 'react-admin';
 import { useMediaQuery, Theme } from '@material-ui/core';
@@ -19,36 +17,27 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
 import AddressToDetailField from 'components/fields';
-import { AccountShow } from './addressShow';
 import { EmptyActionButtons } from 'components/actions';
 
-
-const accountFilters = [
-    <SearchInput source="q" alwaysOn />,
-];
-
-
-const AccoutList = (props: ListProps): ReactElement => {
+const StakeStatusList = (props: ListProps): ReactElement => {
     return (
         <List
             {...props}
-            filters= {accountFilters}
-            sort={{ field: 'totalValue', order: 'DESC' }}
-            perPage={20}
             bulkActionButtons={ <EmptyActionButtons />}
+            perPage={10}
         >
             <Datagrid>
-                <AddressToDetailField source="address"/>
-                <NumberField source="totalValue" options={{ style: 'currency', currency: 'USD' }} />
-                <TextField source="desc"  />
+                <NumberField label="PairId"  source="pid"/>
+                <NumberField label="totalValue" source="valueInUSDT" options={{ style: 'currency', currency: 'USD' }} />
+                <NumberField source="amount"  />
+                <TextField label="UpdateHash" source="hash"  />
+                <NumberField label="UpdateBlock" source="blockNumber"  />
+                <DateField label="UpdatedAt" source="timestamp" showTime/>
             </Datagrid>
         </List>
     );
 };
 
 export default  {
-    list: AccoutList,
-    icon: AccountIcon,
-    show: AccountShow
-
-};;
+    list: StakeStatusList,
+};

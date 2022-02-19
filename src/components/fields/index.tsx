@@ -11,7 +11,7 @@ const AddressToDetailField = (props : any) => {
     return (
          <MuiLink
                     component={Link}
-                    to={linkToRecord('/accounts', record.id, 'show')}
+                    to={linkToRecord('/accounts', record.address, 'show')}
                     underline="none"
          >
              <TextField source={props.source}  />

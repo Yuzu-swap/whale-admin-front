@@ -5,6 +5,8 @@ import LabelIcon from '@material-ui/icons/Label';
 import { makeStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import SubMenu from './SubMenu';
+import { stringify } from 'query-string';
+
 import {
     useTranslate,
     DashboardMenuItem,
@@ -15,6 +17,8 @@ import {
 
 
 import accounts from "../accounts";
+import stakeevents from "../stakeevents";
+
 
 type MenuName = 'menuCatalog' | 'menuSales' | 'menuCustomers';
 
@@ -41,8 +45,8 @@ const Menu = ({ dense = false }: MenuProps) => {
             {' '}
             <DashboardMenuItem />
             <SubMenu
-                handleToggle={() => handleToggle('menuSales')}
-                isOpen={state.menuSales}
+                handleToggle={() => handleToggle('menuCustomers')}
+                isOpen={state.menuCustomers}
                 name="Customer"
                 icon={<accounts.icon />}
                 dense={dense}
@@ -54,6 +58,18 @@ const Menu = ({ dense = false }: MenuProps) => {
                     }}
                     primaryText="Accounts"
                     leftIcon={<accounts.icon />}
+                    dense={dense}
+                />
+                   <MenuItemLink
+                    to={{
+                        pathname: '/stakeevents',
+                        search:stringify({
+                            filter: JSON.stringify({ address: undefined }),
+                        }),
+                        state: { _scrollToTop: true },
+                    }}
+                    primaryText="Events"
+                    leftIcon={<stakeevents.icon />}
                     dense={dense}
                 />
             </SubMenu>
