@@ -1,6 +1,6 @@
 import AppBar from './AppBar';
 import Layout from './Layout';
+import Menu from './Menu';
 // import Login from './Login';
-// import Menu from './Menu';
 
-export { AppBar, Layout };
+export { AppBar, Layout ,Menu};

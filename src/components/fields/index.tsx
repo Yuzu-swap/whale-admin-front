@@ -1,22 +1,22 @@
 import * as React from "react";
 import PropTypes from 'prop-types';
-import { useRecordContext } from 'react-admin';
 import { stringify } from 'query-string';
+import { Paper, Typography, Link as MuiLink } from '@material-ui/core';
+import { linkToRecord, SelectField,useRecordContext,TextField } from 'react-admin';
+import { Link } from 'react-router-dom';
+
 
 const AddressToDetailField = (props : any) => {
-    const { source } = props;
     const record = useRecordContext(props);
-    const path = stringify({
-        filter: JSON.stringify({ address: record[source] }),
-    })
-    console.log(path)
-    return <a href={"#/stakeevents?" + path}>{record[source]}</a>;
+    return (
+         <MuiLink
+                    component={Link}
+                    to={linkToRecord('/accounts', record.id, 'show')}
+                    underline="none"
+         >
+             <TextField source={props.source}  />
+        </MuiLink>
+    )
 }
-
-AddressToDetailField.propTypes = {
-    label: PropTypes.string,
-    record: PropTypes.object,
-    source: PropTypes.string.isRequired,
-};
 
 export default AddressToDetailField;
