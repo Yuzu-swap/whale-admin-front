@@ -15,7 +15,7 @@ import { useMediaQuery, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
-import AddressToDetailField from 'components/fields';
+import {AddressToDetailField} from 'components/fields';
 
 const StakePoolsList = (props: ListProps): ReactElement => {
     return (

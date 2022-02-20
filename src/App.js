@@ -11,6 +11,7 @@ import interestRecords from "components/interestrecords";
 import acccountLogs from "components/accountlogs";
 import authProvider from "components/authprovider";
 import Login from "components/layout/Login";
+import StakePoolsList from "components/accounts/stakePoolsList";
 
 const dataProvider = dataprovider("http://admin-test.yuzu-swap.com");
 const App = () => (
@@ -25,6 +26,7 @@ const App = () => (
           <Resource name="stakestatus" {...stakestatus} />
           <Resource name="interestrecords" {...interestRecords} />
           <Resource name="accountlogs" {...acccountLogs} />
+          <Resource name="stakepools" list={StakePoolsList}/>
       </Admin>
   );
 

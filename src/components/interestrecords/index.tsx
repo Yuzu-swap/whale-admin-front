@@ -20,7 +20,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
 import { EmptyActionButtons } from 'components/actions';
-import AddressToDetailField from 'components/fields';
+import {AddressToDetailField} from 'components/fields';
 
 
 

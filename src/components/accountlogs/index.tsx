@@ -16,7 +16,7 @@ import { useMediaQuery, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
-import AddressToDetailField from 'components/fields';
+import {AddressToDetailField} from 'components/fields';
 import { EmptyActionButtons } from 'components/actions';
 
 const AccountLogList = (props: ListProps): ReactElement => {

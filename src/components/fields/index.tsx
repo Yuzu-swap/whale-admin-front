@@ -6,7 +6,7 @@ import { linkToRecord, SelectField,useRecordContext,TextField } from 'react-admi
 import { Link } from 'react-router-dom';
 
 
-const AddressToDetailField = (props : any) => {
+export const AddressToDetailField = (props : any) => {
     const record = useRecordContext(props);
     return (
          <MuiLink
@@ -19,4 +19,15 @@ const AddressToDetailField = (props : any) => {
     )
 }
 
-export default AddressToDetailField;
+export const PoolIdToName = (props : any)=>{
+    const record = useRecordContext(props);
+    const extraData : any = props.extraData;
+    return(
+        <>{extraData && extraData[record.pid].name}</>
+    )
+}
+
+export const HashJump = (props : any) =>{
+    const record = useRecordContext(props);
+
+}
