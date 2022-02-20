@@ -9,11 +9,15 @@ import stakeevents from "components/stakeevents";
 import stakestatus from "components/stakestatus";
 import interestRecords from "components/interestrecords";
 import acccountLogs from "components/accountlogs";
+import authProvider from "components/authprovider";
+import Login from "components/layout/Login";
 
 const dataProvider = dataprovider("http://admin-test.yuzu-swap.com");
 const App = () => (
       <Admin 
       dataProvider={dataProvider}
+      authProvider={authProvider}
+      loginPage={Login}
       dashboard={Dashboard}
       layout={Layout}>
           <Resource name="accounts" {...accounts} />

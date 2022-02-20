@@ -25,8 +25,8 @@ const StakePoolsList = (props: ListProps): ReactElement => {
         >
             <Datagrid>
                 <TextField label="id" source="id"/>
-                <TextField label="池子名称" source="name"/>
-                <TextField label="合约地址" source="lpAddress"/>
+                <TextField label="pool" source="name"/>
+                <TextField label="adress" source="lpAddress"/>
             </Datagrid>
         </List>
     );
