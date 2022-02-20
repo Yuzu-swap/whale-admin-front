@@ -41,8 +41,14 @@ const AccoutList = (props: ListProps): ReactElement => {
             <Datagrid>
                 <AddressToDetailField source="address"/>
                 <NumberField source="totalValue" options={{ style: 'currency', currency: 'USD' }} />
+<<<<<<< HEAD
                 <TextField source="desc"/>
                 <BooleanField source="kyc"/>
+=======
+                <TextField source="desc"  />
+                <BooleanField source="kyc"  />
+                <BooleanField source="whale" />
+>>>>>>> a4dbc5ae26bb4334ff525a36b6b2fdfbb00ffd57
             </Datagrid>
         </List>
     );
