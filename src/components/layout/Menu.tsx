@@ -6,7 +6,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import SubMenu from './SubMenu';
 import { stringify } from 'query-string';
-
 import {
     useTranslate,
     DashboardMenuItem,
@@ -18,15 +17,16 @@ import {
 
 import accounts from "../accounts";
 import stakeevents from "../stakeevents";
+import FinanceIcon from '@material-ui/icons/Money';
 
 
-type MenuName = 'menuCatalog' | 'menuSales' | 'menuCustomers';
+type MenuName = 'menuCatalog' | 'menuFinance' | 'menuCustomers';
 
 const Menu = ({ dense = false }: MenuProps) => {
     const [state, setState] = useState({
-        menuCatalog: true,
-        menuSales: true,
         menuCustomers: true,
+        menuFinance: true,
+        menuCatalog: true,
     });
     const open = useSelector((state: ReduxState) => state.admin.ui.sidebarOpen);
     const classes = useStyles();
@@ -70,6 +70,26 @@ const Menu = ({ dense = false }: MenuProps) => {
                     }}
                     primaryText="Events"
                     leftIcon={<stakeevents.icon />}
+                    dense={dense}
+                />
+            </SubMenu>
+            <SubMenu
+                handleToggle={() => handleToggle('menuFinance')}
+                isOpen={state.menuFinance}
+                name="Finance"
+                icon={<FinanceIcon />}
+                dense={dense}
+            >
+                <MenuItemLink
+                    to={{
+                        pathname: '/interestrecords',
+                        search:stringify({
+                            filter: JSON.stringify({ address: undefined }),
+                        }),
+                        state: { _scrollToTop: true },
+                    }}
+                    primaryText="Interest"
+                    leftIcon={<FinanceIcon />}
                     dense={dense}
                 />
             </SubMenu>

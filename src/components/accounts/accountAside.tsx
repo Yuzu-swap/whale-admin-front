@@ -89,6 +89,41 @@ const AccountAside = ({ record, basePath }: AsideProps) => {
                     >
                         Stake events
                     </Button>
+
+                    <Button
+                        size="small"
+                        color="primary"
+                        component={RouterLink}
+                        to={{
+                            pathname: '/interestrecords',
+                            search: stringify({
+                                filter: JSON.stringify({ address: record?.address }),
+                                sort: 'timestamp',
+                                order: 'DESC'
+                            }),
+                        }}
+                        className={classes.link}
+                    >
+                        Interest records
+                    </Button>
+
+                    <Button
+                        size="small"
+                        color="primary"
+                        component={RouterLink}
+                        to={{
+                            pathname: '/accountlogs',
+                            search: stringify({
+                                filter: JSON.stringify({ address: record?.address }),
+                                sort: '_id',
+                                order: 'DESC'
+                            }),
+                        }}
+                        className={classes.link}
+                    >
+                        Account Logs
+                    </Button>
+
                     </CardContent>
                 </Card>
             </Box>

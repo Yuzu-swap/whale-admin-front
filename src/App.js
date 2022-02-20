@@ -7,6 +7,8 @@ import dataprovider from "components/dataprovider";
 import accounts from "components/accounts";
 import stakeevents from "components/stakeevents";
 import stakestatus from "components/stakestatus";
+import interestRecords from "components/interestrecords";
+import acccountLogs from "components/accountlogs";
 
 const dataProvider = dataprovider("http://admin-test.yuzu-swap.com");
 const App = () => (
@@ -17,6 +19,8 @@ const App = () => (
           <Resource name="accounts" {...accounts} />
           <Resource name="stakeevents" {...stakeevents} />
           <Resource name="stakestatus" {...stakestatus} />
+          <Resource name="interestrecords" {...interestRecords} />
+          <Resource name="accountlogs" {...acccountLogs} />
       </Admin>
   );
 

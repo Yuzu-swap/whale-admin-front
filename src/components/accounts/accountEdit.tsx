@@ -15,7 +15,8 @@ import {
     TextField,
     NumberField,
     SaveButton,
-    Button
+    Button,
+    DateField
 } from 'react-admin';
 import { Box, Card, CardContent, Typography } from '@material-ui/core';
 import AccountAside from './accountAside';
@@ -55,8 +56,16 @@ const AccountForm = (props: any) => {
                                         <TextField source="id"  resource="accounts"/>
                                     </Box>
                                     <Box display={{ xs: 'block', sm: 'flex' }}>
-                                        <>tvl:</>
-                                        <TextField source="totalValue" resource="accounts"/>
+                                        <>Interest:</>
+                                        <TextField label="interest" source="roseInterest.totalInterest" resource="accounts"/>
+                                    </Box>    
+                                    <Box display={{ xs: 'block', sm: 'flex' }}>
+                                        <>Interest UpdatedAt:  </>
+                                        <DateField label="Interest updatedAt" source="roseInterest.bcContext.timestamp" resource="accounts" showTime />
+                                    </Box>    
+                                    <Box display={{ xs: 'block', sm: 'flex' }}>
+                                        <>Latest stakes In Usdt :</>
+                                        <NumberField label="Interest updatedAt" source="roseInterest.lastInterestEffect" resource="accounts" options={{ style: 'currency', currency: 'USD' }} />
                                     </Box>    
                                     <Box display={{ xs: 'block', sm: 'flex' }}>
                                         <Box
