@@ -16,7 +16,7 @@ import { useMediaQuery, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
-import {AddressToDetailField} from 'components/fields';
+import {AddressToDetailField, HashJump} from 'components/fields';
 import { EmptyActionButtons } from 'components/actions';
 
 const AccountLogList = (props: ListProps): ReactElement => {
@@ -32,7 +32,7 @@ const AccountLogList = (props: ListProps): ReactElement => {
             <Datagrid>
                 <TextField label="Category" source="category"/>
                 <TextField label="Details" source="metaInfo"/>
-                <TextField label="Hash" source="hash"/>
+                <HashJump label="Hash" source="hash"/>
                 <DateField label="Time" source="timestamp" showTime/>
             </Datagrid>
         </List>

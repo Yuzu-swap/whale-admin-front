@@ -15,7 +15,7 @@ import { useMediaQuery, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
-import {AddressToDetailField} from 'components/fields';
+import {AddressToDetailField, ContractJump} from 'components/fields';
 
 const StakePoolsList = (props: ListProps): ReactElement => {
     return (
@@ -26,7 +26,7 @@ const StakePoolsList = (props: ListProps): ReactElement => {
             <Datagrid>
                 <TextField label="id" source="id"/>
                 <TextField label="pool" source="name"/>
-                <TextField label="adress" source="lpAddress"/>
+                <ContractJump label="adress" source="lpAddress"/>
             </Datagrid>
         </List>
     );

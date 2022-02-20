@@ -17,7 +17,7 @@ import { useMediaQuery, Theme } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ReactElement } from 'react';
-import {AddressToDetailField, PoolIdToName} from 'components/fields';
+import {AddressToDetailField, PoolIdToName, HashJump} from 'components/fields';
 import { EmptyActionButtons } from 'components/actions';
 import { StakePool } from 'types';
 
@@ -37,7 +37,7 @@ const StakeStatusList = (props: ListProps): ReactElement => {
                 <PoolIdToName label="PairName"  source="pid" extraData={statuses}/>
                 <NumberField label="totalValue" source="valueInUSDT" options={{ style: 'currency', currency: 'USD' }} />
                 <NumberField source="amount"  />
-                <TextField label="UpdateHash" source="hash"  />
+                <HashJump label="UpdateHash" source="hash"  />
                 <NumberField label="UpdateBlock" source="blockNumber"  />
                 <DateField label="UpdatedAt" source="timestamp" showTime/>
             </Datagrid>
